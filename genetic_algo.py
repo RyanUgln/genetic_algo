@@ -10,12 +10,12 @@ def generate_population(generation):
     directions_x=[]
     directions_y=[]
     
-    for i in range(50): # we create 50 indivuduals 
+    for i in range(50): # we create 50 individuals 
         
-        del directions_x[:] # we delete each element of directions for each iteration
+        del directions_x[:] # we delete all elements of directions
         del directions_y[:]        
                 
-        for i in range(200): # we create the random directions array 
+        for i in range(200): # we create a random directions array
             
             directions_x.append(randint(-1,1))
             directions_y.append(randint(-1,1))
@@ -42,11 +42,38 @@ population = generate_population(1); # first generation created
 ######################################
 
 
-def checkMove(individual):
-    
-    directions = []
-    #NORTH
 
+def best_fitness(population):               # We search for the best individual in the last population
+    best=0
+                                            # Use the barrel method in a near future, to return more than 
+    for i in range(length(population)):
+        if population[i].fitness>score:
+            best=population[i]
+            champion=i
+    return champion                         # Return the index of the best individual 
+
+
+
+######################################
+
+
+
+def checkMove(individual, obstacle):                  # Death of the individual
+    directions = []
     
+    
+    #Check if the individual hit an obstacle
+    
+    if individual.x>=obstacle.w and individual.x<=obstacle.x and individual.y<=obstacle.y and individual.y<=obstacle.z:
+        indivual.life=False
+    
+    
+    #Check if the individual went out of the map
+    
+    if individual.x<=0 or individual.x>=SIZEMAP or individual.y<=0 or individual.y>=SIZEMAP:
+        indivual.life=False
+        
+        
+    return individual
     
     
