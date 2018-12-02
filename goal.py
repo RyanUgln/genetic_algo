@@ -10,4 +10,3 @@ class Goal:
         
         self.x=x
         self.y=y
-        

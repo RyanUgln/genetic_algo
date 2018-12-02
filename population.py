@@ -3,12 +3,11 @@ from random import randint
 
 class Population:
 
-    def __init__(self, generation, tab_of_individuals):
+    def __init__(self, generation):
         
         self.generation = generation
-        self.tab_of_individuals = tab_of_individuals
         
-        tab_of_individuals = []
+        self.tab_of_individuals = []
         directions_x=[]
         directions_y=[]
         
