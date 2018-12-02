@@ -27,10 +27,10 @@ class Population:
 
     
     def best_fitness(self):               # We search for the best individual in the last population
-        best=0                                  # N'EST PAS UN INT MAIS UN INDIVIDUAL
-                                                # Use the barrel method in a near future, to return more than 
+        best=0                                  
+                                                # Use the barrel method in a near future, to return more than one individual 
         for i in range(length(self)):
-            if self[i].fitness>score:
-                best=self[i]              # LIGNE INUTILE ?
+            if self[i].fitness>best:
+                best=self[i].fitness              
                 champion=i
         return champion                         # Return the index of the best individual 
