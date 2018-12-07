@@ -8,8 +8,8 @@ class Individual:
 
     def __init__(self, directions_x, directions_y, generation, fitness):
         
-        self.x=50 # Starting positions
-        self.y=50
+        self.x=500/2 - 4 # Starting positions
+        self.y=400
         
         self.fitness=fitness
         
@@ -26,13 +26,13 @@ class Individual:
         
         #Check if the individual hit an obstacle
         
-        if self.x>=obstacle.w and self.x<=obstacle.x and self.y>=obstacle.y and self.y<=obstacle.z:
+        if self.x>=obstacle.x and self.x<=(obstacle.x+obstacle.width) and self.y>=obstacle.y and self.y<=(obstacle.y + obstacle.height):
             self.life=False
         
         
         #Check if the individual went out of the map
         
-        if self.x<=0 or self.x>=WIDTH or self.y<=0 or self.y>=HEIGHT:
+        if self.x<=0 or self.x>=500 or self.y<=0 or self.y>=500:
             self.life=False
             
         #Check if the individual reached the goal
